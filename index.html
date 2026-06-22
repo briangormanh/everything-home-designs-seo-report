@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SEO Onboarding Dossier — Everything Home Designs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#2b3535; --ink-strong:#303c3c; --ink-soft:#586462; --stone:#7d8583;
+    --red:#e43c3c; --red-deep:#c12d2d; --red-soft:#fdeaea;
+    --bg:#f8f9f9; --card:#ffffff; --panel:#eef1f0; --line:#e3e7e5; --line-2:#d3d9d7;
+    --t1:#e43c3c; --t1-soft:#fdeaea; --t2:#bd8718; --t2-soft:#f7efda; --t3:#2f8f5b; --t3-soft:#e7f2ec;
+    --good:#2f8f5b; --good-soft:#e7f2ec; --warn:#bd8718; --warn-soft:#f7efda; --low:#7d8583; --low-soft:#eef1f0;
+    --win:#e7f2ec;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:'Onest',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Instrument Serif',Georgia,serif;font-weight:400;line-height:1.08;letter-spacing:.2px;color:var(--ink-strong);margin:0}
+  p{margin:0 0 13px}
+
+  /* link types ------------------------------------------------------ */
+  /* external / reference link */
+  a.ref{color:var(--red-deep);text-decoration:none;border-bottom:1px solid var(--red-soft);transition:border-color .15s,color .15s}
+  a.ref:hover{border-bottom-color:var(--red);color:var(--red)}
+  a.ref::after{content:"\2197";font-size:.72em;margin-left:1px;color:var(--red);vertical-align:super;opacity:.7}
+  /* in-page jump link */
+  a.jump{color:var(--ink-strong);text-decoration:none;border-bottom:1px dotted var(--stone);font-weight:500;transition:border-color .15s,color .15s}
+  a.jump:hover{color:var(--red-deep);border-bottom-color:var(--red)}
+  a.jump::after{content:"\2193";font-size:.78em;margin-left:3px;color:var(--red);opacity:.75}
+  /* tiny verify link */
+  a.chk{font-family:'Onest';font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--stone);text-decoration:none;border:1px solid var(--line);border-radius:20px;padding:1px 8px;margin-left:6px;white-space:nowrap;transition:.15s}
+  a.chk:hover{color:var(--red-deep);border-color:var(--red)}
+  a.chk::before{content:"\2197 ";font-size:.85em;color:var(--red)}
+
+  .label{font-family:'Onest';font-weight:600;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+
+  /* bar */
+  .bar{position:sticky;top:0;z-index:40;background:rgba(248,249,249,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .bar .in{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:13px 30px}
+  .logo{font-family:'Instrument Serif',serif;font-size:21px;color:var(--ink-strong);white-space:nowrap;display:flex;align-items:center;gap:8px}
+  .logo .dot{width:9px;height:9px;border-radius:50%;background:var(--red);display:inline-block}
+  .nav{margin-left:auto;display:flex;gap:2px;flex-wrap:wrap}
+  .nav a{font-family:'Onest';font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--stone);padding:7px 11px;border-radius:4px;text-decoration:none}
+  .nav a:hover{color:var(--ink-strong)}
+  .nav a.active{color:var(--red-deep)}
+  .nav a.active::after{content:"";display:block;height:2px;background:var(--red);margin-top:5px;border-radius:2px}
+
+  .wrap{max-width:1080px;margin:0 auto;padding:0 30px}
+
+  /* hero */
+  .hero{padding:62px 0 30px;border-bottom:1px solid var(--line)}
+  .hero .label{margin-bottom:18px}
+  .hero h1{font-size:62px;letter-spacing:-.5px;margin-bottom:18px}
+  .thesis{font-family:'Instrument Serif',serif;font-style:italic;font-size:30px;line-height:1.28;max-width:830px;margin:0 0 22px}
+  .thesis b{font-style:normal;color:var(--red-deep)}
+  .dl{font-size:15px;color:var(--ink-soft);max-width:770px}
+  .metaline{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:24px;font-size:13.5px;color:var(--stone)}
+  .metaline b{color:var(--ink);font-weight:600}.metaline .sep{color:var(--line-2)}
+
+  .figures{display:grid;grid-template-columns:repeat(4,1fr);margin:30px 0 4px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .fig{padding:18px 22px;border-left:1px solid var(--line)}
+  .fig:first-child{border-left:0;padding-left:0}
+  .fig .v{font-family:'Instrument Serif',serif;font-size:38px;line-height:1;color:var(--ink-strong)}
+  .fig .v em{font-style:normal;color:var(--red)}
+  .fig .k{font-size:12.5px;color:var(--stone);margin-top:8px;line-height:1.35}
+
+  section{padding:50px 0;border-bottom:1px solid var(--line);scroll-margin-top:64px}
+  section:last-of-type{border-bottom:0}
+  .opener{display:flex;align-items:baseline;gap:16px;margin-bottom:6px}
+  .snum{font-family:'Instrument Serif',serif;font-size:22px;color:var(--red);min-width:40px;border-top:2px solid var(--red);padding-top:6px;line-height:1}
+  .opener h2{font-size:38px;letter-spacing:-.3px}
+  .o-sub{color:var(--ink-soft);font-size:15.5px;margin:4px 0 26px 56px;max-width:770px}
+  @media(max-width:720px){.o-sub{margin-left:0}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px 28px;margin-bottom:16px}
+  .card h3{font-size:25px;margin-bottom:6px}
+  h4{font-family:'Onest';font-weight:700;font-size:15px;color:var(--ink-strong);margin:18px 0 8px}
+  .muted{color:var(--ink-soft)}
+
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:15px}
+  th,td{text-align:left;padding:11px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+  thead th{background:var(--panel);color:var(--ink-strong);font-family:'Onest';font-weight:600;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;border-bottom:2px solid var(--red)}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--bg)}
+  td .big{font-family:'Instrument Serif',serif;font-size:24px;color:var(--ink-strong);line-height:1}
+  tr.win td{background:var(--win)}
+  tr.win .big{color:var(--good)}
+  tr.win td:first-child{box-shadow:inset 3px 0 0 var(--good)}
+
+  .badge{display:inline-block;font-family:'Onest';font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 9px;border-radius:3px;vertical-align:middle}
+  .bs{background:var(--good-soft);color:var(--good)}.bm{background:var(--warn-soft);color:#9c6f12}.bl{background:var(--low-soft);color:var(--low)}
+
+  .tier{border:1px solid var(--line);border-left:3px solid var(--stone);border-radius:8px;padding:20px 24px;margin-bottom:14px;background:var(--card)}
+  .tier.t1{border-left-color:var(--t1)}.tier.t2{border-left-color:var(--t2)}.tier.t3{border-left-color:var(--t3)}
+  .tier .th{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .tier .tg{font-family:'Onest';font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:4px 10px;border-radius:3px;color:#fff}
+  .t1 .tg{background:var(--t1)}.t2 .tg{background:var(--t2)}.t3 .tg{background:var(--t3)}
+  .tier .th .nm{font-family:'Onest';font-weight:600;font-size:14px;letter-spacing:.04em;color:var(--ink-soft)}
+  .tier ul{margin:0;padding:0;list-style:none}
+  .tier li{position:relative;padding:9px 0 9px 22px;border-top:1px solid var(--line);font-size:15px}
+  .tier li:first-child{border-top:0}
+  .tier li::before{content:"";position:absolute;left:2px;top:16px;width:6px;height:6px;border-radius:50%;background:var(--red)}
+  .tier li b{color:var(--ink-strong)}
+
+  .note{border-left:3px solid var(--red);background:var(--red-soft);border-radius:0 8px 8px 0;padding:15px 20px;margin:16px 0}
+  .note.good{border-color:var(--good);background:var(--good-soft)}
+  .note .k{display:block;font-family:'Onest';font-weight:700;font-size:13.5px;color:var(--ink-strong);margin-bottom:4px}
+  .note p{margin:0;font-size:15px}
+
+  ul.arrow{list-style:none;padding:0;margin:6px 0}
+  ul.arrow li{position:relative;padding:9px 0 9px 24px;border-bottom:1px solid var(--line);font-size:15px}
+  ul.arrow li:last-child{border-bottom:0}
+  ul.arrow li::before{content:"\2014";position:absolute;left:0;color:var(--red);font-weight:700}
+  code{font-family:ui-monospace,Menlo,monospace;font-size:13px;background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:1px 6px;color:var(--ink-strong)}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .mini{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:var(--card)}
+  .mini h4{margin:0 0 6px}.mini p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+  /* module cards */
+  .modules{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+  .mod{border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+  .mod .mh{display:flex;align-items:center;gap:11px;padding:14px 20px;border-bottom:1px solid var(--line);background:var(--panel)}
+  .mod .mn{font-family:'Instrument Serif',serif;font-size:25px;color:var(--red);line-height:1}
+  .mod .mh h3{font-size:24px;flex:1;margin:0}
+  .ph{font-family:'Onest';font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--stone);border:1px solid var(--line-2);border-radius:20px;padding:3px 10px;white-space:nowrap}
+  .ph.now{color:var(--red-deep);border-color:#f1c4c4}
+  .mod .mb{padding:4px 20px 14px}
+  .track{padding:11px 0;border-top:1px solid var(--line)}
+  .track:first-child{border-top:0}
+  .tk{display:inline-flex;align-items:center;gap:7px;font-family:'Onest';font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px}
+  .tk .d{width:8px;height:8px;border-radius:2px}
+  .tk.c{color:#c12d2d}.tk.c .d{background:#e43c3c}
+  .tk.l{color:#9c6f12}.tk.l .d{background:#bd8718}
+  .tk.t{color:#3a5f7d}.tk.t .d{background:#3f6b8a}
+  .tk.u{color:#2f7a4e}.tk.u .d{background:#2f8f5b}
+  .tk.s{color:#6a4f94}.tk.s .d{background:#7a5aa6}
+  .ti{font-size:14px;color:var(--ink);line-height:1.55}
+  .ti .sub{color:var(--stone)}
+  @media(max-width:720px){.modules{grid-template-columns:1fr}}
+
+  .foot{padding:40px 0 60px;text-align:center;color:var(--stone)}
+  .chain{display:inline-flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;margin-bottom:12px}
+  .chain b{font-family:'Onest';font-weight:600;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-strong);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:6px 13px}
+  .chain i{color:var(--red);font-style:normal}
+  .foot .src{font-size:13px}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+  @media(max-width:720px){
+    .nav{display:none}.wrap{padding:0 18px}.hero{padding:40px 0 24px}.hero h1{font-size:40px}
+    .thesis{font-size:23px}.figures{grid-template-columns:1fr 1fr}.fig{border-left:0;padding-left:0;border-top:1px solid var(--line)}.figures{border-top:0}
+    .grid2{grid-template-columns:1fr}.opener h2{font-size:29px}.card{padding:20px}table{font-size:13.5px}th,td{padding:9px 10px}
+  }
+  @media print{.bar{display:none}.reveal{opacity:1;transform:none}*{box-shadow:none!important}a.ref::after,a.jump::after{content:""}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="in">
+  <div class="logo"><span class="dot"></span>Sixth City Marketing</div>
+  <nav class="nav" id="nav">
+    <a href="#summary">Summary</a><a href="#market">Market</a><a href="#audit">Site Audit</a>
+    <a href="#modules">Modules</a><a href="#strategy">Strategy</a><a href="#verify">Verify</a>
+  </nav>
+</div></div>
+
+<div class="wrap">
+
+  <header class="hero reveal in">
+    <div class="label">SEO Onboarding Dossier</div>
+    <h1>Everything Home Designs</h1>
+    <p class="thesis">Already <b>winning a market no one has truly earned</b> — the site is just leaking the advantage it has.</p>
+    <p class="dl">They rank #2 organically and #2 in the map pack, hold the highest real authority in the field, and own a top-1% Houzz reputation. Every competitor is running on junk links, so authority is a wide-open lane to pull ahead. This quarter is about fixing the leaks, putting the proof on the page, and starting the links and reviews that compound into a durable lead.</p>
+    <div class="metaline">
+      <a class="ref" href="https://www.everythinghomedesigns.com/" target="_blank">everythinghomedesigns.com</a><span class="sep">/</span>
+      <span>Luxury home remodeling + interior design</span><span class="sep">/</span>
+      <span>Carmel, IN</span><span class="sep">/</span><span>Squarespace</span><span class="sep">/</span>
+      <span><b>14 hrs/mo</b></span><span class="sep">/</span><span>June 21, 2026</span>
+    </div>
+    <div class="figures">
+      <div class="fig"><div class="v"><em>#2</em> / <em>#2</em></div><div class="k">Organic &amp; map-pack rank for <a class="ref" href="https://www.google.com/search?q=home+remodeling+Carmel+IN" target="_blank">"home remodeling Carmel IN"</a></div></div>
+      <div class="fig"><div class="v">DR <em>26</em></div><div class="k">Highest real authority in the field (rivals: 0.6–25)</div></div>
+      <div class="fig"><div class="v">Top <em>1%</em></div><div class="k">Houzz reputation nationally · 122+ 5-star reviews</div></div>
+      <div class="fig"><div class="v">273</div><div class="k">Pages crawled &amp; analyzed (252 indexable)</div></div>
+    </div>
+  </header>
+
+  <section id="summary" class="reveal">
+    <div class="opener"><div class="snum">—</div><h2>The three biggest levers</h2></div>
+    <p class="o-sub">A focused cleanup quarter, not a teardown. The structure is sound — the work is making the strength they already have convert.</p>
+    <div class="grid2">
+      <div class="mini"><h4>1 · Put the proof on the page</h4><p>The Houzz top-1% / 122+ 5-star reputation appears on <b>zero</b> pages. Surfacing it, plus clear calls-to-action, is the fastest conversion win for a $40k–$100k+ buyer. <a class="jump" href="#audit">See the action plan</a></p></div>
+      <div class="mini"><h4>2 · Sharpen the local pages &amp; fix the Carmel overlap</h4><p>The city pages are near-identical templates that need differentiating per location; separately, a few general Carmel pages genuinely overlap and compete. <a class="jump" href="#competing">See the detail</a></p></div>
+      <div class="mini"><h4>3 · Earn links nobody else has</h4><p>The whole field runs on junk links. The client already leads on real design-publication links — a small earned-link program builds a lead none of them can match. <a class="jump" href="#growth">See the targets</a></p></div>
+      <div class="mini"><h4>The shape of the plan</h4><p>Fix the leaks (tracking, galleries, proof, redirects) first; then untangle the competing pages and start earning real links and reviews. Foundations now; momentum from there.</p></div>
+    </div>
+  </section>
+
+  <section id="market" class="reveal">
+    <div class="opener"><div class="snum">01</div><h2>Market Evaluation</h2></div>
+    <p class="o-sub">The competitive picture for <a class="ref" href="https://www.google.com/search?q=home+remodeling+Carmel+IN" target="_blank">"home remodeling Carmel IN"</a> — where the client sits, the gaps, the timelines, and the opportunity.</p>
+
+    <div class="card">
+      <h3>Where they rank</h3>
+      <p><b>Map pack:</b> #1 The HomeWright &nbsp;·&nbsp; <b>#2 Everything Home</b> &nbsp;·&nbsp; #3 Chateau Kitchens &amp; Home Remodeling.</p>
+      <p><b>Organic top 5:</b> #1 MJ Brown &nbsp;·&nbsp; <b>#2 Everything Home</b> &nbsp;·&nbsp; #3 The HomeWright &nbsp;·&nbsp; #4 Worthington &nbsp;·&nbsp; #5 Custom Home Medic. Yelp, HomeGuide and Angi take three of the ten organic slots; no AI Overview appeared. <a class="ref" href="https://www.google.com/search?q=home+remodeling+Carmel+IN" target="_blank">View the live results</a></p>
+    </div>
+
+    <div class="card">
+      <h3>Authority — a field where no one has earned real strength</h3>
+      <p class="muted">Domain Rating (DR) is a 0–100 measure of a site's backlink strength. The whole field sits between 0.6 and 26, so no competitor here has built a real link advantage — and the client leads it.</p>
+      <table>
+        <thead><tr><th>Site</th><th>DR</th><th>Ref. domains</th><th>What you'd notice</th></tr></thead>
+        <tbody>
+          <tr class="win"><td><b>Everything Home</b> (client)</td><td><span class="big">26</span></td><td>401</td><td>Highest real authority; count inflated by churn — the genuine links are directories (BBB, Houzz, Clutch)</td></tr>
+          <tr><td><a class="ref" href="https://worthingtonindy.com/" target="_blank">Worthington</a></td><td><span class="big">25</span></td><td>448</td><td>A sudden 220-in-60-days link spike; a handful are real (HuffPost, AOL, realtor.com)</td></tr>
+          <tr><td><a class="ref" href="https://www.thehomewright.com/" target="_blank">The HomeWright</a></td><td><span class="big">3.8</span></td><td>256</td><td>Map-pack #1 carried by Google Business Profile + reviews, not links</td></tr>
+          <tr><td><a class="ref" href="https://www.customhomemedic.com/" target="_blank">Custom Home Medic</a></td><td><span class="big">1.3</span></td><td>252</td><td>Almost entirely spam and directory links</td></tr>
+          <tr><td><a class="ref" href="https://www.mjbrownrenovations.com/" target="_blank">MJ Brown</a></td><td><span class="big">0.6</span></td><td>236</td><td>Ranks organic #1 on essentially zero authority</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card">
+      <h3>Reviews — read the savvy way</h3>
+      <table>
+        <thead><tr><th>Business</th><th>Google reviews</th><th>Rating</th></tr></thead>
+        <tbody>
+          <tr class="win"><td>Chateau</td><td><span class="big">280</span></td><td>4.9</td></tr>
+          <tr><td><b>Everything Home</b> (client) <a class="chk" href="https://www.google.com/search?q=Everything+Home+Designs+Carmel+reviews" target="_blank">reviews</a></td><td><span class="big">68</span></td><td>4.9</td></tr>
+          <tr><td>MJ Brown</td><td>42</td><td>5.0</td></tr>
+          <tr><td>The HomeWright</td><td>39</td><td>5.0</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">Chateau has more Google reviews but ranks <i>below</i> the client, so reviews aren't holding the ranking back. That isn't the whole story:</p>
+      <div class="note good"><span class="k">Why the review gap still matters</span><p>Reviews and links both build authority — the same lever that lets the client pull ahead. And reviews are a trust signal a real person sees: a homeowner comparing the map pack notices 68 next to Chateau's 280 and may hesitate, even when the client outranks them. Close the Google-review gap first; third-party platforms (Houzz, Yelp, Angi) are secondary — and <a class="ref" href="https://www.houzz.com/professionals/" target="_blank">Houzz</a> (122+ 5-star, top 1%) is already a real strength.</p></div>
+    </div>
+  </section>
+
+  <section id="audit" class="reveal">
+    <div class="opener"><div class="snum">02</div><h2>Site Audit</h2></div>
+    <p class="o-sub">A full crawl of 273 pages across four lenses — content, conversion, backlinks, and competitor content.</p>
+
+    <h3 style="font-size:27px;margin:0 0 14px 2px">Prioritized action plan</h3>
+
+    <div class="tier t1">
+      <div class="th"><span class="tg">Tier 1</span><span class="nm">Immediate fixes</span></div>
+      <ul>
+        <li><b>Put the Houzz / review proof on every page.</b> It's on none of them. Add a Houzz badge + "122+ 5-star reviews" to the <a class="ref" href="https://www.everythinghomedesigns.com/" target="_blank">homepage</a> and each service/city hero, plus a short testimonial strip above each call-to-action.</li>
+        <li><b>Give the portfolio galleries an intro, a headline, and a next step.</b> The gallery pages under the Portfolio menu — <a class="ref" href="https://www.everythinghomedesigns.com/portfolio" target="_blank">/portfolio</a>, <a class="ref" href="https://www.everythinghomedesigns.com/bathroom" target="_blank">/bathroom</a>, <a class="ref" href="https://www.everythinghomedesigns.com/basement" target="_blank">/basement</a>, <a class="ref" href="https://www.everythinghomedesigns.com/whole-home" target="_blank">/whole-home</a>, <a class="ref" href="https://www.everythinghomedesigns.com/kitchen" target="_blank">/kitchen</a> — are image-only with blank headlines. Low copy is fine for a gallery, but each should introduce itself and link to its matching service page. <i>(These aren't the money pages — the <code>/carmel-*</code> service pages are built and have real copy.)</i></li>
+        <li><b>Add a clear "Schedule a Consultation" button in the hero of every money page.</b> Today it only lives in the nav and footer.</li>
+        <li><b>Clean up the page titles.</b> The brand name is doubled (and cut off) on the five Carmel service-page titles, and several pages have no headline.</li>
+        <li><b>Delete or redirect <a class="ref" href="https://www.everythinghomedesigns.com/home-1" target="_blank">/home-1</a></b> — an orphaned exact copy of the homepage.</li>
+        <li><b>Confirm the <a class="ref" href="https://www.everythinghomedesigns.com/contact" target="_blank">contact form</a> works</b> and lands on a thank-you page.</li>
+      </ul>
+    </div>
+    <div class="tier t2">
+      <div class="th"><span class="tg">Tier 2</span><span class="nm">High-impact improvements</span></div>
+      <ul>
+        <li><b>Differentiate the location pages &amp; resolve the Carmel overlap.</b> <a class="jump" href="#competing">See the detail below</a> — make each city page genuinely local (don't merge them), give the overlapping general Carmel pages distinct jobs, and broaden the core service pages beyond Carmel.</li>
+        <li><b>Rewrite the service and city pages in the luxury voice</b> and add proof (Houzz, awards, process depth).</li>
+        <li><b>Claim the easy directory links</b> competitors have and the client doesn't — and check whether the client is already there:
+          <a class="chk" href="https://www.google.com/search?q=site%3Arealtor.com+Everything+Home+Designs" target="_blank">realtor.com</a>
+          <a class="chk" href="https://www.google.com/search?q=site%3Ahomelight.com+Everything+Home+Designs" target="_blank">homelight</a>
+          <a class="chk" href="https://www.google.com/search?q=site%3Aporch.com+Everything+Home+Designs" target="_blank">porch</a>
+          <a class="chk" href="https://www.google.com/search?q=site%3Ayellowpages.com+Everything+Home+Designs" target="_blank">yellowpages</a>
+          <a class="chk" href="https://www.google.com/search?q=site%3Achamberofcommerce.com+Everything+Home+Designs" target="_blank">chamber</a>
+          <a class="chk" href="https://www.google.com/search?q=site%3Adexknows.com+Everything+Home+Designs" target="_blank">dexknows</a>.
+          Verify the <a class="ref" href="https://www.google.com/search?q=Everything+Home+Designs+Carmel" target="_blank">Google Business Profile</a> is claimed and optimized.</li>
+        <li><b>Add a consultation CTA and related-service links to blog posts</b> — right now they dead-end.</li>
+      </ul>
+    </div>
+    <div class="tier t3" id="growth">
+      <div class="th"><span class="tg">Tier 3</span><span class="nm">Growth opportunities</span></div>
+      <ul>
+        <li><b>Build the pages they're missing</b> (confirm the client offers each first): a standalone Interior Design page (half the brand, but it only lives inside city pages today), Outdoor Living, Aging-in-Place, Virtual/e-Design; expand <a class="ref" href="https://www.everythinghomedesigns.com/whole-home" target="_blank">/whole-home</a>; add a non-Carmel custom-build page.</li>
+        <li><b>Run the earned-link program</b> — the durable advantage. Each link below checks whether the client is already featured:
+          <a class="ref" href="https://www.indianapolismonthly.com/" target="_blank">Indianapolis Monthly</a> <a class="chk" href="https://www.google.com/search?q=site%3Aindianapolismonthly.com+Everything+Home+Designs" target="_blank">check</a>,
+          <a class="ref" href="https://thescoutguide.com/" target="_blank">The Scout Guide</a> <a class="chk" href="https://www.google.com/search?q=site%3Athescoutguide.com+Everything+Home+Designs" target="_blank">check</a>,
+          <a class="ref" href="https://www.homebuilderdigest.com/" target="_blank">HomeBuilderDigest</a> <a class="chk" href="https://www.google.com/search?q=site%3Ahomebuilderdigest.com+Everything+Home+Designs" target="_blank">check</a>,
+          the <a class="ref" href="https://www.indianadesigncenter.com/" target="_blank">Indiana Design Center</a>, a remodeling podcast, and "find a designer" links from the brands they buy from.</li>
+        <li><b>Add decision-stage content</b> — remodel cost, timeline, and budget guides per room — for buyers close to choosing.</li>
+      </ul>
+    </div>
+
+    <div class="card" id="competing">
+      <h3>Local pages, Carmel overlap, and geographic breadth</h3>
+      <p class="muted">Three separate things often get lumped together here. Only the first is true "cannibalization" — multiple pages competing for the <i>same</i> search. The other two are content-quality and positioning issues, not cannibalization.</p>
+
+      <h4>1 · A real but narrow overlap — the general Carmel pages</h4>
+      <p><a class="ref" href="https://www.everythinghomedesigns.com/carmel" target="_blank">/carmel</a> (positioned as "Carmel Interior Designers and Remodelers"), <a class="ref" href="https://www.everythinghomedesigns.com/carmel-home-remodeling" target="_blank">/carmel-home-remodeling</a>, <a class="ref" href="https://www.everythinghomedesigns.com/carmel-interior-designers" target="_blank">/carmel-interior-designers</a>, and the homepage all target the same general "Carmel remodeling / interior design" search — so they genuinely compete. (The service-specific Carmel pages — kitchen, bath, basement — are fine: different services, different searches.) <b>Fix:</b> give each page a distinct job, or fold the catch-all <code>/carmel</code> page into the dedicated ones.</p>
+
+      <h4>2 · The city pages are templated, not competing</h4>
+      <p><a class="ref" href="https://www.everythinghomedesigns.com/fishers" target="_blank">Fishers</a>, <a class="ref" href="https://www.everythinghomedesigns.com/zionsville" target="_blank">Zionsville</a>, <a class="ref" href="https://www.everythinghomedesigns.com/westfield" target="_blank">Westfield</a>, Noblesville, McCordsville, and Geist each own their own city, so they don't compete with each other. The issue is they're near-identical — the same copy with the city name swapped — which is thin and under-differentiated, and that "same template across many cities" pattern is what Google's quality scrutiny targets (and what past agencies left behind). <b>Fix:</b> make each page genuinely local — real local projects, neighborhoods, specifics — or prune the cities there's no business case for. Keep separate pages for separate cities; don't merge them.</p>
+
+      <h4>3 · The site reads as "Carmel-only"</h4>
+      <p>Because the core service pages are all Carmel-named, the site misses the wider metro. Worth broadening some to a metro / Indiana focus so they can rank beyond Carmel. (Also: <a class="ref" href="https://www.everythinghomedesigns.com/indiana-basement-design-remodeling" target="_blank">/indiana-basement-design-remodeling</a> is thin (335 words) and barely linked — merge it into <a class="ref" href="https://www.everythinghomedesigns.com/carmel-basement-remodeler" target="_blank">/carmel-basement-remodeler</a>.)</p>
+
+      <p><span class="badge bm">Moderate confidence</span> &nbsp;The Carmel overlap is read from the pages' titles and headers — the crawl's duplicate-detection wasn't turned on. Re-crawl with it on to confirm exactly how much those general Carmel pages overlap.</p>
+    </div>
+
+    <div class="card">
+      <h3>Conversion options &amp; CTAs</h3>
+      <p class="muted">There are a few ways to convert on the site, and the placement shows which one the business is betting on. Each could work harder.</p>
+      <ul class="arrow">
+        <li><b>Phone — the primary path.</b> It sits in the header, so calls are clearly the main conversion. Make it pull its weight: <b>larger, in a standout color</b> (or a button/icon treatment), <b>click-to-call on mobile</b>, and repeated inside the section CTAs — not just the header.</li>
+        <li><b>Contact form — the secondary path.</b> On the <a class="ref" href="https://www.everythinghomedesigns.com/" target="_blank">homepage</a> it's buried at the very bottom. <b>Bring it up to mid-page</b> (it doesn't need to be above the fold) and frame it as the alternative — e.g. "Prefer to write? Tell us about your project." Keep the fields minimal and confirm it submits to a thank-you page.</li>
+        <li><b>"Schedule a Consultation" — the offer.</b> Today it lives only in the nav and footer. Add a <b>high-contrast button in the hero</b> of every money page, with consistent copy through the flow.</li>
+        <li><b>Worth testing</b> for a $40k–$100k+ buyer: a text option or a booking link as a low-friction secondary — only if it fits how they actually field leads.</li>
+      </ul>
+      <p><span class="badge bm">Verify live</span> &nbsp;Phone and form placements are read from static screenshots — confirm them on the live site and in the mobile view, and check the form submits to a working thank-you page.</p>
+    </div>
+
+    <div class="card" id="competitor">
+      <h3>Competitor content — proven ideas to borrow</h3>
+      <p class="muted">Only ideas with real traffic/ranking proof. Two competitors had almost no content (<a class="ref" href="https://www.mjbrownrenovations.com/" target="_blank">MJ Brown</a> ~32 visits/mo, <a class="ref" href="https://www.thehomewright.com/" target="_blank">The HomeWright</a> ~17, no blogs); <a class="ref" href="https://worthingtonindy.com/" target="_blank">Worthington</a> (~829 visits/mo) supplied nearly all of it — almost entirely room/feature "ideas" articles.</p>
+      <h4>Content topics that rank (the headline) — click any example to see it live</h4>
+      <ul class="arrow">
+        <li><b>Room/feature "ideas" articles</b> — Worthington ranks <b>#3 for "kitchen island ideas" (10,000/mo)</b> [<a class="ref" href="https://worthingtonindy.com/custom-kitchen-island-ideas/" target="_blank">their page</a>] and <b>#1 for "fireplace renovation ideas" (7,500/mo)</b> [<a class="ref" href="https://worthingtonindy.com/fireplace-renovation-ideas/" target="_blank">their page</a>], plus <a class="ref" href="https://worthingtonindy.com/home-bars/" target="_blank">home bars</a> (#1) and cabinet ideas — all at low authority, so attainable. The client's blog skews general decor (color psychology), not these high-intent terms. Supports the kitchen / whole-home pages.</li>
+        <li><b>Annual "[year] design trends"</b> — Worthington's <a class="ref" href="https://worthingtonindy.com/2025-bathroom-design-trends/" target="_blank">bathroom design trends</a> post ranks for "bathroom design trends" (500/mo) and refreshes yearly. Supports bath / kitchen pages.</li>
+        <li><b>Decision / FAQ content</b> — <a class="ref" href="https://worthingtonindy.com/common-whole-home-remodeling-questions/" target="_blank">common remodeling questions</a> (#5) and <a class="ref" href="https://worthingtonindy.com/prioritize-your-remodeling-projects/" target="_blank">how to prioritize your remodel</a> (#7) both rank. Funnel support for the service pages.</li>
+        <li><b>Home addition / expansion ideas</b> — <a class="ref" href="https://worthingtonindy.com/home-addition-ideas/" target="_blank">their page</a> ranks #1–6 (450 + 600/mo). <span class="badge bm">Confirm</span> the client offers additions first.</li>
+      </ul>
+      <h4>Pages worth adding</h4>
+      <ul class="arrow">
+        <li><b>Written project case studies</b> (not just photo galleries) — Worthington's <a class="ref" href="https://worthingtonindy.com/case-study/screened-in-porch-exterior-remodel-zionsville/" target="_blank">porch remodel case study</a> ranks "porch remodel" #2 (900/mo) and proves craft. The client has a big portfolio to convert into these.</li>
+        <li><b>Certifications / Accreditations page</b> — <a class="ref" href="https://www.thehomewright.com/certifications/" target="_blank">The HomeWright's page</a> ranks #5–7 for "home remodeling certification" (90/mo); a trust page that earns its own traffic. The client has awards + the Houzz top-1% badge to feature.</li>
+        <li><b>A "how we manage your project" process page</b> — Worthington's <a class="ref" href="https://worthingtonindy.com/home-remodeling-project-manager/" target="_blank">project-manager page</a> ranks #5 for "home renovation project manager"; a natural luxury design-build trust page.</li>
+        <li><b>Free seminars / education offer</b> as lead capture — Worthington's <a class="ref" href="https://worthingtonindy.com/upcoming-free-kitchen-bath-seminars/" target="_blank">seminars page</a> ranks #1 for "remodeling seminar topics". <span class="badge bm">Confirm</span> the client wants to run these.</li>
+      </ul>
+      <p><span class="badge bs">Strong</span> &nbsp;Every item has a live Ahrefs traffic/ranking number. Only add more city+service pages if each is genuinely differentiated (see the <a class="jump" href="#competing">local-pages note</a> above).</p>
+    </div>
+
+    <div class="card">
+      <h3>The four audit lenses</h3>
+      <div class="grid2">
+        <div class="mini"><h4>Content &nbsp;<span class="badge bs">Strong</span></h4><p>Sound structure + a healthy 136-post blog. Drags: image-only galleries, <a class="jump" href="#competing">look-alike city pages + the Carmel overlap</a>, doubled titles, and a missing standalone Interior Design page.</p></div>
+        <div class="mini"><h4>Conversion &nbsp;<span class="badge bm">Moderate</span></h4><p>Biggest miss is the absent Houzz/review proof; CTAs hide in the nav; galleries and blog posts don't point to a next step. (Reads from static screenshots.)</p></div>
+        <div class="mini"><h4>Backlinks &nbsp;<span class="badge bs">Strong</span></h4><p>The field runs on junk links; the client already leads on real design-publication links + Houzz. Easy directory links are missing; a small earned-link program is the pull-ahead play.</p></div>
+        <div class="mini"><h4>Competitor content &nbsp;<span class="badge bs">Strong</span></h4><p>Worthington's "ideas" articles rank #1–3 on big head terms at low authority — proven content the client's blog is missing — plus written case studies + a certifications page. <a class="jump" href="#competitor">See the ideas</a></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modules" class="reveal">
+    <div class="opener"><div class="snum">03</div><h2>Module Map</h2></div>
+    <p class="o-sub">The 30,000-foot view. Current focus: Foundations — fixing what's leaking so the existing strength converts, not building from zero.</p>
+    <div class="modules">
+      <div class="mod">
+        <div class="mh"><span class="mn">1</span><h3>Foundations</h3><span class="ph now">Now</span></div>
+        <div class="mb">
+          <div class="track"><span class="tk c"><span class="d"></span>Content / CRO</span><div class="ti">Tracking setup (GA4, Search Console, Clarity, HubSpot forms) · keyword bank · homepage <span class="sub">(done)</span> · conversion + auxiliary page priorities · gallery intros + headlines · surface Houzz proof + CTAs</div></div>
+          <div class="track"><span class="tk l"><span class="d"></span>Links</span><div class="ti">Low-hanging fruit: citations (realtor.com, Porch, YellowPages, Chamber, HomeLight, DexKnows) · partner / testimonial links · brand mentions · claim &amp; optimize GBP</div></div>
+          <div class="track"><span class="tk t"><span class="d"></span>Technical</span><div class="ti">Forms &amp; phone · main nav · sitemaps (XML / HTML) · fix redirects &amp; 404s · remove <code>/home-1</code></div></div>
+          <div class="track"><span class="tk u"><span class="d"></span>UX</span><div class="ti">Review behavior data (Clarity) · mobile-first pass</div></div>
+        </div>
+      </div>
+      <div class="mod">
+        <div class="mh"><span class="mn">2</span><h3>Velocity</h3><span class="ph">Next</span></div>
+        <div class="mb">
+          <div class="track"><span class="tk c"><span class="d"></span>Content / CRO</span><div class="ti">Resource + About pages · improve / prune existing blog · new decision-stage (BOFU) content · standalone Interior Design page · <a class="jump" href="#competing">differentiate the city pages + fix the Carmel overlap</a></div></div>
+          <div class="track"><span class="tk l"><span class="d"></span>Links</span><div class="ti">Guest posts · statistical roundups · PR links · vendor "find a designer" links</div></div>
+          <div class="track"><span class="tk t"><span class="d"></span>Technical</span><div class="ti">Internal links · schema</div></div>
+          <div class="track"><span class="tk u"><span class="d"></span>UX</span><div class="ti">Ongoing UX updates</div></div>
+        </div>
+      </div>
+      <div class="mod">
+        <div class="mh"><span class="mn">3</span><h3>Growth</h3><span class="ph">Later</span></div>
+        <div class="mb">
+          <div class="track"><span class="tk c"><span class="d"></span>Content / CRO</span><div class="ti">Revisit money pages · additional resource / About pages · middle-funnel (MOFU) clusters · build missing pages (outdoor living, aging-in-place, custom build, virtual / e-design)</div></div>
+          <div class="track"><span class="tk l"><span class="d"></span>Links</span><div class="ti">Authority match · paid opportunities · competitor strategies · podcasts · <a class="jump" href="#growth">the earned-link program</a></div></div>
+          <div class="track"><span class="tk t"><span class="d"></span>Technical</span><div class="ti">Images · JavaScript</div></div>
+          <div class="track"><span class="tk u"><span class="d"></span>UX</span><div class="ti">Ongoing UX updates</div></div>
+        </div>
+      </div>
+      <div class="mod">
+        <div class="mh"><span class="mn">4</span><h3>Expansion</h3><span class="ph">Furthest</span></div>
+        <div class="mb">
+          <div class="track"><span class="tk c"><span class="d"></span>Content / CRO</span><div class="ti">Top-of-funnel content · ongoing blog updates</div></div>
+          <div class="track"><span class="tk l"><span class="d"></span>Links</span><div class="ti">Ongoing link building</div></div>
+          <div class="track"><span class="tk t"><span class="d"></span>Technical</span><div class="ti">Site crawl</div></div>
+          <div class="track"><span class="tk u"><span class="d"></span>UX</span><div class="ti">Ongoing UX updates</div></div>
+          <div class="track"><span class="tk s"><span class="d"></span>Social</span><div class="ti">Deepen Houzz · Instagram / Pinterest (ideal for luxury design) · video (project tours)</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="note"><p style="margin:0"><b>Timeline is months of sustained effort, not calendar months.</b> At 14 hrs/mo, Foundations is realistically the first quarter-plus, with Velocity starting in parallel once tracking and the galleries are handled.</p></div>
+  </section>
+
+  <section id="strategy" class="reveal">
+    <div class="opener"><div class="snum">04</div><h2>Q3 Strategy</h2></div>
+    <p class="o-sub">July–September 2026. An initial quarter: 14 hrs/mo + 3 setup hours = 45 hours. Setup-heavy in July, production in August, produce-and-plan in September.</p>
+    <div class="grid2">
+      <div class="card" style="margin:0"><h3 style="font-size:21px">July &nbsp;<span class="label">17 hours</span></h3><ul class="arrow">
+        <li>Kickoff + initial strategy (incl. AI-search visibility) &amp; keyword bank</li>
+        <li>Build out the Kitchen service page</li>
+        <li>Set up tracking (GA4, Search Console, Clarity) + HubSpot forms</li>
+        <li>Surface Houzz proof + add CTAs on the homepage &amp; top pages</li>
+        <li>Begin redirect cleanup + remove <code>/home-1</code></li>
+        <li>Foundational citations, round 1</li>
+      </ul></div>
+      <div class="card" style="margin:0"><h3 style="font-size:21px">August &nbsp;<span class="label">14 hours</span></h3><ul class="arrow">
+        <li>Build out Bathroom + Whole-Home pages</li>
+        <li>Fix the doubled titles + missing headlines</li>
+        <li>Extend Houzz proof + CTAs to the rest of the money pages</li>
+        <li>Continue redirect cleanup; claim &amp; optimize Google Business Profile</li>
+        <li>PR / earned-link outreach</li>
+      </ul></div>
+      <div class="card" style="margin:0"><h3 style="font-size:21px">September &nbsp;<span class="label">14 hours</span></h3><ul class="arrow">
+        <li>Build out Basement + Portfolio</li>
+        <li>Plan to consolidate the competing city pages</li>
+        <li>Citations round 2 + "find a designer" partner links</li>
+        <li>Mobile + contact-form check</li>
+        <li>Plan the Q4 strategy (moves into Velocity)</li>
+      </ul></div>
+      <div class="mini" style="align-self:start"><h4>Every month</h4><p>Account management + a strategist account review. The quarterly report is skipped this quarter (brand-new client). AI-search language is built into the plan.</p></div>
+    </div>
+  </section>
+
+  <section id="verify" class="reveal">
+    <div class="opener"><div class="snum">05</div><h2>What to verify</h2></div>
+    <p class="o-sub">A few things to confirm before acting, so nothing is built on an assumption.</p>
+    <div class="card">
+      <ul class="arrow">
+        <li><b>Re-crawl with duplicate-detection on</b> to measure exactly how much the city pages overlap before consolidating them.</li>
+        <li><b>Confirm the real list of services the client offers</b> before building any new money page (especially outdoor living and custom build).</li>
+        <li><b>Confirm tracking + Google Business Profile status</b> — the client manages Search Console herself, and call tracking is on hold after a bad past experience.</li>
+        <li><b>Live-test</b> the <a class="ref" href="https://www.everythinghomedesigns.com/contact" target="_blank">contact form</a> (and its thank-you page) and mobile tap-to-call; pull behavior and call data if available.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div class="chain"><b>Market Evaluation</b><i>→</i><b>Site Audit</b><i>→</i><b>Module Map</b><i>→</i><b>Q3 Strategy</b></div>
+    <div class="src">Each step also has its own standalone deliverable in the client folder.<br>Prepared by the SEO onboarding skill chain · Sixth City Marketing · June 21, 2026</div>
+  </div>
+
+</div>
+
+<script>
+  const nav=[...document.querySelectorAll('#nav a')];
+  const map=nav.map(a=>({a,s:document.querySelector(a.getAttribute('href'))})).filter(m=>m.s);
+  const spy=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){
+    nav.forEach(l=>l.classList.remove('active'));const m=map.find(m=>m.s===e.target);if(m)m.a.classList.add('active');}}),
+    {rootMargin:'-45% 0px -50% 0px'});
+  map.forEach(m=>spy.observe(m.s));
+  const rev=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');rev.unobserve(e.target);}}),{rootMargin:'0px 0px -10% 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>rev.observe(el));
+</script>
+</body>
+</html>
